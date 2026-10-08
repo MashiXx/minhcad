@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   KufCad design tokens
+   Monochrome + engineering blue. Yellow is reserved for the robot.
+------------------------------------------------------------------- */
+@theme {
+  --color-bg: #080a0d;
+  --color-surface-1: #0d1117;
+  --color-surface-2: #11161d;
+  --color-surface-3: #151b23;
+  --color-fg: #f5f7fa;
+  --color-muted: #8d98a8;
+  --color-subtle: #5d6876;
+  --color-line: rgb(255 255 255 / 0.07);
+  --color-line-strong: rgb(255 255 255 / 0.13);
+  --color-accent: #2f7bff;
+  --color-accent-hover: #4a8cff;
+  --color-accent-soft: rgb(47 123 255 / 0.12);
+  --color-robot: #f2b705;
+  --color-axis-x: #e5484d;
+  --color-axis-y: #46a758;
+  --color-axis-z: #2f7bff;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --breakpoint-xs: 375px;
+}
+
+:root {
+  color-scheme: dark;
+  --nav-height: 64px;
+}
+
+html {
+  background: var(--color-bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: rgb(47 123 255 / 0.35);
+  color: #fff;
+}
+
+/* Anchor targets clear the fixed navbar (Lenis honours scroll-margin). */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+/* Visible, consistent keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------
+   Technical backgrounds
+------------------------------------------------------------------- */
+@utility cad-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility cad-grid-fine {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.025) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+@utility mask-fade-b {
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 75%);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Slow drift for the hero grid. Disabled for reduced motion below. */
+@keyframes grid-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 96px, 96px 0;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes loader-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-grid-drift {
+  animation: grid-drift 40s linear infinite;
+}
+
+.animate-scan-line {
+  animation: scan-line 14s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-grid-drift,
+  .animate-scan-line {
+    animation: none !important;
+  }
+}
+
+/* Long-form content (docs, blog, legal) */
+.prose-kuf {
+  color: rgb(245 247 250 / 0.82);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose-kuf > * + * {
+  margin-top: 1.25em;
+}
+.prose-kuf h2 {
+  color: var(--color-fg);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.4em;
+  scroll-margin-top: calc(var(--nav-height) + 32px);
+}
+.prose-kuf h3 {
+  color: var(--color-fg);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  margin-top: 2em;
+  scroll-margin-top: calc(var(--nav-height) + 32px);
+}
+.prose-kuf a {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgb(74 140 255 / 0.4);
+}
+.prose-kuf a:hover {
+  text-decoration-color: currentColor;
+}
+.prose-kuf ul,
+.prose-kuf ol {
+  padding-left: 1.25em;
+}
+.prose-kuf ul {
+  list-style: disc;
+}
+.prose-kuf ol {
+  list-style: decimal;
+}
+.prose-kuf li + li {
+  margin-top: 0.4em;
+}
+.prose-kuf li::marker {
+  color: var(--color-subtle);
+}
+.prose-kuf code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-line);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+}
+.prose-kuf pre {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+.prose-kuf pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.prose-kuf blockquote {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1.25em;
+  color: var(--color-fg);
+  font-style: italic;
+}
+.prose-kuf strong {
+  color: var(--color-fg);
+  font-weight: 600;
+}

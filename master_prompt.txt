@@ -1,0 +1,1868 @@
+# MASTER PROMPT — BUILD A PREMIUM 2026 CAD SOFTWARE WEBSITE
+
+You are acting as:
+
+- Senior Product Designer
+- Senior UI/UX Designer
+- Senior Frontend Engineer
+- Motion Designer
+- Three.js / WebGL Engineer
+- Creative Director
+
+Your task is to DESIGN AND IMPLEMENT a complete premium marketing website for a professional CAD desktop application.
+
+Do not merely provide suggestions or a plan.
+
+You must inspect the existing project, make architectural decisions, create the required components, implement the pages, animations, responsive behavior, and polish the result until it feels like a real commercial product website.
+
+============================================================
+1. PRODUCT
+============================================================
+
+The product is a professional CAD / engineering desktop application.
+
+The application supports:
+
+- 2D CAD drafting
+- 3D modeling
+- Engineering drawings
+- Layers
+- Dimensions
+- Assemblies
+- Visualization
+- Rendering
+- Multiple file formats
+- Professional engineering workflows
+
+The application has desktop versions for:
+
+- Windows
+- macOS
+- Ubuntu Linux
+
+The screenshots provided with this task show the real application.
+
+There are two important reference screenshots:
+
+1. A 2D CAD engineering drawing showing roads/intersections/layers.
+2. A 3D CAD workspace showing a yellow industrial robot arm.
+
+These screenshots are REAL PRODUCT VISUALS.
+
+Do not replace them with generic stock CAD imagery.
+
+============================================================
+2. DESIGN REFERENCE
+============================================================
+
+There is also a visual design reference image:
+
+design-reference/website-reference.png
+
+This image contains a multi-page visual concept for the website.
+
+Use it as a visual reference for:
+
+- layout
+- visual hierarchy
+- color
+- typography
+- spacing
+- page structure
+- navigation
+- cards
+- pricing
+- documentation
+- download page
+- support page
+- blog
+- legal pages
+- responsive composition
+
+IMPORTANT:
+
+Do not blindly reproduce the reference image.
+
+Use it as creative direction.
+
+The final website must look MORE refined than the reference.
+
+The website should feel like a real 2026 commercial engineering software product.
+
+============================================================
+3. DESIGN PHILOSOPHY
+============================================================
+
+The visual direction is:
+
+PREMIUM
+TECHNICAL
+MINIMAL
+ENGINEERING
+CINEMATIC
+MODERN
+CONFIDENT
+
+Avoid:
+
+- generic SaaS templates
+- excessive gradients
+- purple AI startup aesthetics
+- cyberpunk
+- excessive glassmorphism
+- excessive particles
+- giant text covering the entire screen
+- meaningless animations
+- stock photos
+- cheesy "AI futuristic" effects
+
+Think:
+
+modern engineering software
++
+premium developer tools
++
+Apple-level product presentation
++
+modern CAD visualization
+
+The website should communicate:
+
+"This is serious professional engineering software."
+
+============================================================
+4. VISUAL LANGUAGE
+============================================================
+
+Primary background:
+
+#080A0D
+
+Secondary surfaces:
+
+#0D1117
+#11161D
+#151B23
+
+Primary text:
+
+#F5F7FA
+
+Secondary text:
+
+#8D98A8
+
+Accent:
+
+electric blue / engineering blue
+
+Use yellow ONLY as a visual accent associated with the 3D robot model.
+
+Use red / green / blue sparingly when representing CAD layers, axes, or engineering information.
+
+The UI must not become colorful.
+
+Most of the website should remain monochrome + blue.
+
+============================================================
+5. TYPOGRAPHY
+============================================================
+
+Use a modern professional sans-serif.
+
+Preferred:
+
+Inter
+or
+Geist
+
+Typography hierarchy:
+
+Hero:
+very large but controlled.
+
+Section titles:
+48–72px desktop.
+
+Body:
+16–18px.
+
+Small technical metadata:
+12–14px.
+
+Avoid excessive font weight.
+
+Use typography to create hierarchy rather than decoration.
+
+============================================================
+6. TECHNOLOGY STACK
+============================================================
+
+Use modern production-quality frontend technologies.
+
+Preferred stack:
+
+Next.js
+TypeScript
+React
+
+Tailwind CSS
+
+shadcn/ui where appropriate
+
+Framer Motion
+
+GSAP + ScrollTrigger
+
+Three.js
+
+React Three Fiber
+
+@react-three/drei
+
+GLTF / GLB
+
+Lenis or equivalent smooth scrolling library
+
+Lucide icons
+
+Do NOT add libraries unnecessarily.
+
+Use CSS for simple effects.
+
+Use Framer Motion for normal UI transitions.
+
+Use GSAP ScrollTrigger when scroll position must directly control complex animation.
+
+Use Three.js only for actual 3D experiences.
+
+============================================================
+7. ARCHITECTURE
+============================================================
+
+Create a clean production architecture.
+
+Suggested structure:
+
+app/
+  page.tsx
+  features/
+  download/
+  pricing/
+  docs/
+  support/
+  about/
+  blog/
+  blog/[slug]/
+  privacy/
+  terms/
+
+components/
+  layout/
+  navigation/
+  hero/
+  cad/
+  three/
+  motion/
+  sections/
+  pricing/
+  download/
+  docs/
+  footer/
+
+lib/
+  motion/
+  three/
+  utils/
+
+public/
+  models/
+  screenshots/
+  images/
+  fonts/
+
+Keep components reusable.
+
+Do not create one enormous page component.
+
+============================================================
+8. GLOBAL NAVIGATION
+============================================================
+
+Desktop navbar:
+
+LEFT:
+
+Logo + product name
+
+CENTER:
+
+Product
+Features
+Pricing
+Resources
+
+RIGHT:
+
+Download
+
+The navbar should be sticky.
+
+Initial state:
+
+transparent.
+
+After scrolling:
+
+semi-transparent dark background
++
+backdrop blur
++
+subtle bottom border.
+
+Navbar transition should be approximately:
+
+250–400ms.
+
+On mobile:
+
+hamburger menu.
+
+Menu should animate from the right.
+
+Do not simply display an instant dropdown.
+
+Use:
+
+opacity
++
+translateX
++
+blur
+
+for entrance.
+
+============================================================
+9. HOMEPAGE
+============================================================
+
+The homepage is the most important page.
+
+Structure:
+
+1. Hero
+2. Product proof
+3. Interactive 3D
+4. 2D CAD
+5. 3D modeling
+6. Engineering capabilities
+7. Performance
+8. Cross-platform
+9. Pricing CTA
+10. Final download CTA
+11. Footer
+
+============================================================
+10. HERO
+============================================================
+
+Hero headline:
+
+"Design. Model. Engineer."
+
+Subheadline:
+
+"Professional CAD software for modern engineering."
+
+Supporting text:
+
+"Create precise 2D drawings, powerful 3D models, and professional engineering workflows in one desktop application."
+
+Primary CTA:
+
+"Download for Windows"
+
+Secondary:
+
+"Explore the platform"
+
+Below the CTA:
+
+Windows · macOS · Ubuntu
+
+The hero should contain the yellow robot arm 3D model.
+
+============================================================
+11. HERO 3D MODEL
+============================================================
+
+This is one of the most important parts of the website.
+
+Use React Three Fiber / Three.js.
+
+Load a GLB/GLTF model if available.
+
+If the real model is not yet available:
+
+create a clean placeholder abstraction so the architecture is ready for the real GLB.
+
+The model should NOT simply spin continuously at a constant speed.
+
+Create cinematic motion.
+
+Initial state:
+
+camera slightly above the model.
+
+Robot positioned approximately 20–30 degrees rotated.
+
+Very subtle idle movement.
+
+The model should have:
+
+- realistic lighting
+- subtle reflections
+- controlled shadows
+- dark environment
+- technical blue grid
+
+Camera should slowly move.
+
+Use a very subtle camera breathing effect.
+
+Example:
+
+camera position:
+slightly forward
+then very slowly backward
+then forward.
+
+This must be almost imperceptible.
+
+============================================================
+12. HERO MODEL INTERACTION
+============================================================
+
+Mouse movement:
+
+When user moves mouse horizontally:
+
+model rotates slightly toward mouse position.
+
+Vertical mouse movement:
+
+camera/model responds with subtle parallax.
+
+Do NOT overdo it.
+
+Maximum rotation:
+
+approximately 5–8 degrees.
+
+Use spring easing.
+
+The interaction should feel premium.
+
+Not like a game.
+
+============================================================
+13. HERO SCROLL ANIMATION
+============================================================
+
+When user scrolls down:
+
+The hero model should respond to scroll.
+
+At scroll progress 0:
+
+normal robot.
+
+At 20%:
+
+camera moves slightly closer.
+
+At 40%:
+
+robot rotates.
+
+At 60%:
+
+technical wireframe overlay begins appearing.
+
+At 80%:
+
+engineering dimensions / axis indicators appear.
+
+At 100%:
+
+transition toward the next section.
+
+Use GSAP ScrollTrigger.
+
+Animation must be tied to scroll progress.
+
+Do NOT use a simple "fade in on scroll".
+
+============================================================
+14. TECHNICAL CAD OVERLAY
+============================================================
+
+Create subtle technical overlays:
+
+- coordinate axis
+- dimension lines
+- small measurement labels
+- wireframe outlines
+- grid
+- tiny engineering annotations
+
+They should appear gradually.
+
+Example:
+
+"X 720.00"
+"Y 380.00"
+"Z 410.00"
+
+These are decorative UI elements.
+
+They should not imply actual engineering measurements unless backed by real model data.
+
+Use opacity transitions.
+
+Do not clutter the screen.
+
+============================================================
+15. HERO BACKGROUND
+============================================================
+
+Background should contain:
+
+subtle CAD grid.
+
+Use CSS where possible.
+
+Grid should have perspective.
+
+Create very subtle moving technical lines.
+
+Possible effect:
+
+horizontal/vertical grid movement at extremely low speed.
+
+Avoid particle explosions.
+
+Avoid stars.
+
+Avoid glowing dots everywhere.
+
+The background should feel like an engineering workspace.
+
+============================================================
+16. PRODUCT PROOF SECTION
+============================================================
+
+Immediately below hero:
+
+Show three proof points:
+
+Professional CAD
+High Performance
+Cross Platform
+
+Use minimal icons.
+
+Animate each item when entering viewport.
+
+Animation:
+
+opacity 0 → 1
+translateY 20px → 0
+
+stagger 80–120ms.
+
+============================================================
+17. 2D CAD SECTION
+============================================================
+
+Headline:
+
+"Precision at every layer."
+
+Use the supplied 2D CAD screenshot.
+
+Do not display it as a static image only.
+
+Create a framed CAD viewport.
+
+The viewport should look like a real product window.
+
+When section enters viewport:
+
+camera starts zoomed out.
+
+Then slowly zoom into the intersection.
+
+Use GSAP.
+
+Overlay:
+
+- layer indicator
+- coordinate information
+- measurement marker
+- small technical annotations
+
+These overlays appear progressively.
+
+============================================================
+18. 2D CAD INTERACTION
+============================================================
+
+Provide subtle interaction.
+
+When mouse moves over the CAD viewport:
+
+the image should have extremely subtle parallax.
+
+Do NOT distort the screenshot.
+
+Hovering over feature callouts can highlight areas.
+
+Example:
+
+Layers & Blocks
+Accurate Measurement
+Multiple Formats
+Professional Workflows
+
+When user hovers a feature:
+
+highlight relevant region.
+
+============================================================
+19. 3D MODELING SECTION
+============================================================
+
+Headline:
+
+"Model without limits."
+
+Show the robot model again.
+
+Create four states:
+
+1. Solid
+2. Wireframe
+3. X-Ray
+4. Exploded
+
+Create a UI control:
+
+[ Solid ] [ Wireframe ] [ X-Ray ] [ Exploded ]
+
+When user clicks:
+
+transition between states.
+
+Do NOT instantly replace the model.
+
+Animate:
+
+opacity
+material
+scale
+camera
+exploded positions
+
+Use React state + Three.js.
+
+============================================================
+20. EXPLODED VIEW
+============================================================
+
+The exploded state should separate components.
+
+Do not randomly scatter parts.
+
+Parts should move along logical local axes.
+
+Transition:
+
+normal model
+→
+parts slowly separate
+→
+technical labels appear
+
+Reverse when returning to Solid.
+
+Use spring-like easing.
+
+============================================================
+21. WIREFRAME MODE
+============================================================
+
+When selecting Wireframe:
+
+smoothly transition material.
+
+Use:
+
+MeshStandardMaterial / MeshPhysicalMaterial
+
+and/or:
+
+wireframe material overlay.
+
+The transition should take around:
+
+500–900ms.
+
+Do not hard switch.
+
+============================================================
+22. FEATURE PAGE
+============================================================
+
+Create a complete /features page.
+
+Sections:
+
+2D Drafting
+3D Modeling
+Assemblies
+Visualization
+File Formats
+Performance
+Automation
+Professional Workflows
+
+Each feature should have:
+
+headline
+description
+visual
+technical metadata
+
+Use alternating layouts.
+
+Animation:
+
+visual and text should not enter simultaneously.
+
+Example:
+
+text enters from left
+visual enters from right
+with 100–150ms difference.
+
+============================================================
+23. DOWNLOAD PAGE
+============================================================
+
+Create:
+
+/download
+
+Headline:
+
+"Download the CAD platform."
+
+Platform selector:
+
+Windows
+macOS
+Ubuntu
+
+Tabs should animate.
+
+When selecting platform:
+
+content transitions with:
+
+opacity
+scale
+height
+
+Do not remount the whole page unnecessarily.
+
+Display:
+
+version
+release date
+architecture
+file size
+system requirements
+
+Example:
+
+Windows 10/11
+x64
+ARM64
+
+macOS
+Apple Silicon
+Intel
+
+Ubuntu
+22.04
+24.04
+
+Primary button:
+
+"Download for Windows"
+
+============================================================
+24. DOWNLOAD BUTTON MICRO-INTERACTION
+============================================================
+
+Hover:
+
+button moves slightly upward:
+
+translateY(-1px)
+
+shadow increases.
+
+Icon shifts 2–4px.
+
+On click:
+
+show loading state if appropriate.
+
+Do not fake actual download progress unless backend exists.
+
+============================================================
+25. PRICING PAGE
+============================================================
+
+Create /pricing.
+
+Keep it extremely clean.
+
+Plans:
+
+Personal
+Professional
+
+Cards should feel like software licensing rather than SaaS subscriptions.
+
+Hover:
+
+card rises 4–6px.
+
+border becomes slightly brighter.
+
+shadow increases subtly.
+
+Do not use exaggerated 3D card effects.
+
+Add feature comparison table below.
+
+On mobile:
+
+table becomes stacked cards.
+
+============================================================
+26. DOCUMENTATION
+============================================================
+
+Create /docs.
+
+Layout:
+
+LEFT:
+documentation navigation.
+
+CENTER:
+content.
+
+RIGHT:
+table of contents.
+
+Search bar at top.
+
+Documentation categories:
+
+Getting Started
+Installation
+2D Drafting
+3D Modeling
+Assemblies
+Rendering
+File Formats
+Automation
+Troubleshooting
+FAQ
+
+Use smooth section navigation.
+
+Sidebar should remain sticky on desktop.
+
+============================================================
+27. SUPPORT PAGE
+============================================================
+
+Create /support.
+
+Three main cards:
+
+Browse Help Center
+Community
+Contact Support
+
+Add:
+
+Popular topics
+
+Installation issues
+License activation
+System requirements
+File import/export
+Performance
+Scripting and automation
+
+Cards should have subtle hover animations.
+
+============================================================
+28. ABOUT PAGE
+============================================================
+
+Create /about.
+
+Position the company as:
+
+"Professional tools for engineers, designers and creators."
+
+Use product screenshots rather than generic corporate stock photos wherever possible.
+
+Sections:
+
+Mission
+Product philosophy
+Engineering
+Community
+
+Use restrained motion.
+
+============================================================
+29. BLOG
+============================================================
+
+Create:
+
+/blog
+
+Grid of articles.
+
+Use:
+
+large featured article
++
+smaller articles.
+
+Categories:
+
+Product
+Tutorials
+Engineering
+Updates
+
+Cards:
+
+image
+category
+title
+date
+reading time
+
+Hover:
+
+image scales 1.03–1.05.
+
+Do not scale the entire card excessively.
+
+============================================================
+30. BLOG ARTICLE
+============================================================
+
+Create:
+
+/blog/[slug]
+
+Layout:
+
+title
+metadata
+hero visual
+article content
+related articles
+
+Reading experience should be excellent.
+
+Maximum content width approximately:
+
+720–820px.
+
+============================================================
+31. LEGAL
+============================================================
+
+Create:
+
+/privacy
+/terms
+
+Do not over-design these pages.
+
+Prioritize readability.
+
+Use:
+
+max-width 800px.
+
+Sticky table of contents on desktop.
+
+============================================================
+32. FOOTER
+============================================================
+
+Footer:
+
+Product
+Features
+Download
+Pricing
+
+Resources
+Documentation
+Support
+Blog
+
+Company
+About
+Contact
+
+Legal
+Privacy
+Terms
+
+Platforms:
+
+Windows
+macOS
+Ubuntu
+
+Bottom:
+
+Copyright
+social links
+
+Minimal.
+
+============================================================
+33. GLOBAL MOTION SYSTEM
+============================================================
+
+Create a reusable motion system.
+
+Do not write random animation values everywhere.
+
+Create shared constants/functions.
+
+For example:
+
+fadeUp()
+fadeIn()
+scaleIn()
+staggerChildren()
+revealImage()
+revealText()
+
+Motion timing:
+
+micro:
+150–250ms
+
+normal:
+300–500ms
+
+large:
+600–1000ms
+
+cinematic:
+1000–1800ms
+
+Use easing such as:
+
+cubic-bezier(0.22, 1, 0.36, 1)
+
+or equivalent spring motion.
+
+============================================================
+34. PAGE TRANSITIONS
+============================================================
+
+When navigating between pages:
+
+use subtle page transition.
+
+Do NOT create a long loading animation.
+
+Preferred:
+
+current page fades slightly.
+
+new page:
+
+opacity 0 → 1
+translateY 8px → 0
+
+approximately 250–400ms.
+
+============================================================
+35. SCROLL REVEALS
+============================================================
+
+Every major section should reveal intelligently.
+
+Do not animate every paragraph.
+
+Use hierarchy.
+
+Example:
+
+Section title:
+
+opacity + translateY.
+
+Main visual:
+
+clip-path reveal or scale.
+
+Feature cards:
+
+stagger.
+
+Maximum stagger:
+
+100ms.
+
+============================================================
+36. IMAGE REVEALS
+============================================================
+
+For CAD screenshots:
+
+use masked reveal.
+
+Example:
+
+image begins:
+
+clip-path inset(0 100% 0 0)
+
+then transitions to:
+
+clip-path inset(0 0 0 0)
+
+Duration:
+
+900–1200ms.
+
+Use easing.
+
+============================================================
+37. TEXT ANIMATION
+============================================================
+
+Do not animate every letter.
+
+Prefer:
+
+line-based reveal.
+
+For major hero headline:
+
+each line can move upward from a clipped container.
+
+Example:
+
+"Design."
+"Model."
+"Engineer."
+
+Each line staggered by approximately 80ms.
+
+============================================================
+38. REDUCED MOTION
+============================================================
+
+Implement:
+
+prefers-reduced-motion.
+
+When enabled:
+
+disable:
+
+- 3D idle animation
+- parallax
+- complex scroll animation
+- excessive transforms
+
+Keep simple fades.
+
+Accessibility is mandatory.
+
+============================================================
+39. RESPONSIVE DESIGN
+============================================================
+
+Desktop:
+
+1440px+
+full cinematic experience.
+
+Laptop:
+
+1024–1439px.
+
+Tablet:
+
+768–1023px.
+
+Mobile:
+
+320–767px.
+
+Do not simply shrink desktop.
+
+Recompose layouts.
+
+On mobile:
+
+3D model remains important.
+
+Hero text remains readable.
+
+Do not allow 3D model to push CTA below an enormous empty area.
+
+Mobile navigation becomes a proper animated drawer.
+
+============================================================
+40. PERFORMANCE
+============================================================
+
+This is critical.
+
+The website must feel fast.
+
+Use:
+
+lazy loading
+dynamic imports
+code splitting
+compressed GLB
+Draco
+WebP / AVIF
+responsive images
+
+Three.js should be dynamically loaded where possible.
+
+Do not load 3D assets on pages that don't need them.
+
+Do not initialize WebGL globally.
+
+Use IntersectionObserver where appropriate.
+
+Do not continuously run expensive animations when the section is off-screen.
+
+============================================================
+41. THREE.JS PERFORMANCE
+============================================================
+
+Limit:
+
+pixel ratio.
+
+Use:
+
+Math.min(window.devicePixelRatio, 2)
+
+or an appropriate lower limit.
+
+Avoid unnecessary:
+
+shadows
+postprocessing
+high-resolution textures
+
+Dispose:
+
+geometries
+materials
+textures
+
+when components unmount.
+
+============================================================
+42. SEO
+============================================================
+
+Implement:
+
+metadata
+OpenGraph
+Twitter cards
+canonical URLs
+
+Structured data where useful.
+
+Each page needs meaningful:
+
+title
+description
+
+Examples:
+
+"Professional CAD Software for Windows, macOS and Ubuntu"
+
+Do not use generic titles.
+
+============================================================
+43. ACCESSIBILITY
+============================================================
+
+Must support:
+
+keyboard navigation
+visible focus states
+semantic HTML
+ARIA where necessary
+proper contrast
+reduced motion
+
+Buttons must be actual buttons.
+
+Links must be actual links.
+
+Do not make clickable divs unless necessary.
+
+============================================================
+44. MOBILE UX
+============================================================
+
+Mobile is not an afterthought.
+
+Test:
+
+375px
+390px
+430px
+
+Ensure:
+
+no horizontal scrolling.
+
+Buttons have appropriate touch targets.
+
+3D canvas must respond correctly to touch.
+
+Use:
+
+touch-action
+
+appropriately.
+
+============================================================
+45. 3D TOUCH INTERACTION
+============================================================
+
+On mobile:
+
+one finger:
+
+rotate model.
+
+pinch:
+
+zoom.
+
+Do not accidentally scroll the entire page while interacting with the model.
+
+Add a small hint:
+
+"Drag to rotate · Pinch to zoom"
+
+Fade hint out after interaction.
+
+============================================================
+46. CURSOR INTERACTION
+============================================================
+
+Desktop only.
+
+Do NOT replace the browser cursor globally.
+
+For interactive CAD elements:
+
+subtle custom cursor indicator.
+
+Example:
+
+small circle + "Explore"
+
+Only use it on specific interactive visual sections.
+
+Remove it on touch devices.
+
+============================================================
+47. LOADING EXPERIENCE
+============================================================
+
+Do not show a generic spinner.
+
+For 3D:
+
+show a subtle technical loading state.
+
+Example:
+
+LOADING MODEL
+
+████████░░ 82%
+
+or:
+
+INITIALIZING VIEWPORT
+
+Keep it short.
+
+If loading takes less than ~300ms:
+
+do not show the loader.
+
+Avoid flicker.
+
+============================================================
+48. ERROR STATES
+============================================================
+
+If 3D model fails to load:
+
+show a graceful fallback.
+
+Display:
+
+"Interactive 3D preview unavailable."
+
+Then show a static product image.
+
+The website must remain usable.
+
+============================================================
+49. REAL PRODUCT SCREENSHOTS
+============================================================
+
+Use the supplied screenshots.
+
+The screenshots should appear in:
+
+homepage
+features
+documentation
+blog where appropriate
+
+Do not invent fake application screenshots if the real screenshots can be used.
+
+However, it is acceptable to create UI overlays around them for marketing presentation.
+
+============================================================
+50. VISUAL DETAILS
+============================================================
+
+Use:
+
+1px borders.
+
+Very subtle.
+
+Avoid excessive rounded corners.
+
+Preferred radius:
+
+8–16px.
+
+Large marketing visuals:
+
+12–20px.
+
+Do not turn everything into rounded cards.
+
+Some sections should be edge-to-edge.
+
+============================================================
+51. BACKGROUND DETAILS
+============================================================
+
+Use subtle:
+
+CAD grids
+technical lines
+blue glow
+gradient shadows
+very faint wireframes
+
+Opacity should generally remain low.
+
+Background elements should support content, never compete with it.
+
+============================================================
+52. IMPORTANT: DO NOT OVER-ANIMATE
+============================================================
+
+The website must feel expensive.
+
+Expensive websites do NOT move everything.
+
+Animation hierarchy:
+
+Level 1:
+buttons / hover.
+
+Level 2:
+section reveals.
+
+Level 3:
+hero.
+
+Level 4:
+interactive 3D.
+
+Only major product visuals receive cinematic animation.
+
+============================================================
+53. DESIGN SYSTEM
+============================================================
+
+Create reusable:
+
+Button
+Badge
+Card
+SectionHeader
+PlatformSelector
+DownloadButton
+FeatureCard
+ScreenshotFrame
+TechnicalLabel
+Navbar
+Footer
+MotionReveal
+
+Do not duplicate styling.
+
+============================================================
+54. COMPONENT QUALITY
+============================================================
+
+Components must be:
+
+- typed
+- reusable
+- readable
+- production-quality
+
+Avoid:
+
+any
+
+unless absolutely necessary.
+
+Do not leave:
+
+TODO
+
+for core functionality.
+
+Do not create fake implementations for required functionality.
+
+============================================================
+55. CONTENT
+============================================================
+
+Use professional technical copy.
+
+Avoid marketing clichés such as:
+
+"Revolutionary"
+"Game changing"
+"Next generation AI"
+"Unleash your creativity"
+
+Prefer:
+
+"Precise."
+"Fast."
+"Built for engineering."
+
+The copy should sound like a serious engineering product.
+
+============================================================
+56. FINAL HOMEPAGE EXPERIENCE
+============================================================
+
+The visitor should experience:
+
+0–2 seconds:
+
+strong brand impression.
+
+2–5 seconds:
+
+understand that this is CAD software.
+
+5–10 seconds:
+
+see the 3D model and understand the product visually.
+
+Scrolling:
+
+discover 2D CAD.
+
+Then:
+
+3D modeling.
+
+Then:
+
+performance.
+
+Then:
+
+platforms.
+
+Then:
+
+download.
+
+The page should continuously answer:
+
+"What is it?"
+
+"What can it do?"
+
+"Why should I care?"
+
+"Can I use it?"
+
+"Where can I download it?"
+
+============================================================
+57. FINAL QUALITY BAR
+============================================================
+
+Before considering the implementation complete:
+
+Check:
+
+- desktop
+- laptop
+- tablet
+- mobile
+- Chrome
+- Safari
+- reduced motion
+- slow connection
+- 3D loading failure
+- keyboard navigation
+
+Check for:
+
+layout shifts
+overflow
+broken animations
+excessive GPU usage
+console errors
+hydration errors
+React warnings
+unused imports
+
+Run:
+
+lint
+typecheck
+build
+
+Fix all errors.
+
+============================================================
+58. IMPORTANT CREATIVE DIRECTION
+============================================================
+
+The website should NOT feel like:
+
+"another Tailwind landing page."
+
+It should feel like:
+
+"A premium engineering software company just launched a serious new CAD product in 2026."
+
+The product itself is the hero.
+
+The yellow robot arm is a visual signature.
+
+The CAD drawing is the technical proof.
+
+The dark interface is the brand.
+
+Motion communicates engineering precision.
+
+============================================================
+59. IMPLEMENTATION STRATEGY
+============================================================
+
+First inspect the existing project.
+
+Do NOT destroy an existing working application without understanding it.
+
+Determine:
+
+framework
+package manager
+existing dependencies
+existing routing
+existing assets
+
+Then implement incrementally.
+
+If the project is empty:
+
+initialize a clean Next.js + TypeScript project.
+
+Install only required dependencies.
+
+============================================================
+60. ASSET STRATEGY
+============================================================
+
+Use existing screenshots if available.
+
+Expected assets may include:
+
+2D CAD screenshot
+3D CAD screenshot
+robot model
+
+If a GLB/GLTF model does not exist:
+
+create the Three.js architecture with a clearly isolated placeholder.
+
+Make replacing the placeholder with the real model trivial.
+
+For example:
+
+/public/models/robot.glb
+
+Then:
+
+RobotViewer.tsx
+
+should load that asset.
+
+============================================================
+61. FINAL DELIVERABLE
+============================================================
+
+The final result must include:
+
+Homepage
+Features
+Download
+Pricing
+Documentation
+Support
+About
+Blog
+Blog Article
+Privacy
+Terms
+
+with consistent navigation.
+
+All pages should feel like the same product.
+
+The homepage receives the highest animation and visual polish.
+
+============================================================
+62. DO NOT STOP AT A MOCKUP
+============================================================
+
+This is an implementation task.
+
+Do not answer with:
+
+"Here is how I would build it."
+
+Actually build it.
+
+Do not stop after creating the homepage if the architecture clearly supports the other pages.
+
+Implement the complete experience.
+
+============================================================
+63. SELF-REVIEW
+============================================================
+
+After implementation, inspect the result critically.
+
+Ask:
+
+Does this look like a $10–50/month professional engineering product?
+
+Does the hero immediately communicate CAD?
+
+Does the 3D model feel alive?
+
+Are the animations smooth?
+
+Is the site too flashy?
+
+Is anything visually noisy?
+
+Are the screenshots presented professionally?
+
+Does mobile feel intentional?
+
+Would a professional engineer trust this product?
+
+Fix anything that fails these tests.
+
+============================================================
+64. FINAL RULE
+============================================================
+
+Quality over quantity.
+
+Do not add effects merely because they are technically possible.
+
+Every animation must have a purpose.
+
+Every visual element must support:
+
+engineering
+precision
+performance
+professionalism
+
+The final website should feel:
+
+CALM
+FAST
+PRECISE
+PREMIUM
+TECHNICAL
+CINEMATIC
+
+Build it.
